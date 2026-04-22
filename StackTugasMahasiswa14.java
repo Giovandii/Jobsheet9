@@ -73,4 +73,19 @@ public class StackTugasMahasiswa14{
     public int jumtugas(){
         return top + 1;
     }
+
+    public String konversiDesimalKeBinner (int nilai){
+        StackKonversi14 stack = new StackKonversi14();
+
+        while (nilai != 0) {
+            int sisa = nilai %2;
+            stack.push(sisa);
+            nilai = nilai/2;
+        }
+        String binner = new String();
+        while (!stack.isEmpty()) {
+            binner += stack.pop();
+        }
+        return binner;
+    }
 }
